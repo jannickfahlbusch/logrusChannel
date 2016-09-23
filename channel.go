@@ -19,3 +19,15 @@ func (hook *ChannelHook) Fire(entry *logrus.Entry) error {
 	hook.Channel <- entry
 	return nil
 }
+
+// Levels returns all supported levels
+func (hook *ChannelHook) Levels() []logrus.Level {
+	return []logrus.Level{
+		logrus.PanicLevel,
+		logrus.FatalLevel,
+		logrus.ErrorLevel,
+		logrus.WarnLevel,
+		logrus.InfoLevel,
+		logrus.DebugLevel,
+	}
+}
