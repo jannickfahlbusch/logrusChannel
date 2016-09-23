@@ -8,10 +8,10 @@ type ChannelHook struct {
 }
 
 // NewChannelHook creates a hook to log to a channel
-func NewChannelHook(channel chan *logrus.Entry) (*ChannelHook, error) {
+func NewChannelHook(channel chan *logrus.Entry) *ChannelHook {
 	return &ChannelHook{
 		Channel: channel,
-	}, nil
+	}
 }
 
 // Fire is called whan a log event is fired
